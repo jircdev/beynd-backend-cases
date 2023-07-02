@@ -1,0 +1,58 @@
+$color-primary: #3f5468;
+$color-secondary: #a01531;
+$color-accent: #ce8e16;
+$color-error: #a20303;
+
+.bug-testing-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    color: #FAFAFA;
+  }
+
+  .error {
+    color: $color-error;
+  }
+
+  .execute-button {
+    background-color: $color-primary;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  .spinner {
+    border: 4px solid $color-accent;
+    border-top: 4px solid $color-primary;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 0.8s linear infinite;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
