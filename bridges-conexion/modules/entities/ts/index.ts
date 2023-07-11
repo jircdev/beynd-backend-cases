@@ -9,11 +9,12 @@ export /*bundle*/ class Users {
 
 	async listen() {
 		const backend = await this.#provider.backend;
+		console.log(1, backend)
 		const socket = await backend.socket;
+		console.log(2, socket)
 		socket.on('listen', data => {
 			console.log('I am listening events from the server, data: ', data);
 		});
-		console.log(12, backend);
 	}
 	getAll = async () => {
 		try {
